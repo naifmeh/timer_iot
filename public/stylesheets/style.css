@@ -1,0 +1,51 @@
+
+
+textarea {
+  width: 500px;
+  height: 150px;
+}
+
+
+
+
+body{
+  text-align: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#a1c4fd ), to(#c2e9fb)) fixed;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+
+#clockdiv{
+  font-family: sans-serif;
+  color: #fff;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 100px;
+}
+
+#clockdiv > div{
+  padding: 20px;
+  border-radius: 3px;
+  background: #00BF96;
+  display: inline-block;
+}
+
+#clockdiv div > span{
+  padding: 30px;
+  border-radius: 3px;
+  background: #00816A;
+  display: inline-block;
+}
+
+.smalltext{
+  padding-top: 5px;
+  font-size: 30px;
+}
+
+.nom {
+  color: red;
+}
+
+

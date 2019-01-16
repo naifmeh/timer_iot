@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    script.
+        setTimeout(function(){
+           window.location.reload(1);
+        }, 5000);
+    center
+        if etudiant
+            h1 Timer pour #{etudiant}
+        else
+            h1 Timer
+        p Createur : #{prof} (A noter que le timer affiché est uniquement a titre indicatif et n'est pas exact)
+        div#clockdiv
+            div
+                span.minutes
+                p.smalltext Minutes
+            div
+                span.seconds
+                p.smalltext Secondes
+
+        script.  
+            initializeClock('clockdiv', "#{deadline}");
+            setTimeout(() => {
+                 let minutes = $('#clockdiv').find('.minutes')[0].innerHTML;
+                 if(parseInt(minutes) < 2) {
+                    $('#clockdiv div > span').css('background','#E84C3E');
+                    $('#clockdiv > div').css('background', '#F69988');
+                }
+            }, 1000);
+           
+            
+        br
+        br
+        
+    h2 Commentaires
+    center
+        if comments
+            each comment in comments
+                    .body
+                        span#author= comment.author+': '
+                        span=comment.text
+                        br

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    center
+        h1 Introduisez les informations ci-dessous
+        form.pure-form.pure-form-aligned(action="/prof/timer", method="POST")
+            div.pure-control-group
+                label Identifiant 
+                input(type="text", name="identifiant", value='', placeholder="Identifiant")
+                br
+            div.pure-control-group
+                label Timer (en minutes) 
+                input(type="number", name="timer", value="10", placeholder="minutes")
+                //span.pure-form-message-inline * Obligatoire
+                br
+            div.pure-control-group
+                label Etudiant 
+                input(type="text", name="etudiant", value='', placeholder="Etudiant")
+                br
+                
+            div.pure-controls
+                input.pure-button.pure-button-primary(type='submit', value='Debuter')

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  center
+    h1 Choix du profil
+    block formulaire
+      form(action='/prof')
+        button Professeur
+      form(action='/etudiant')
+        button Etudiant
