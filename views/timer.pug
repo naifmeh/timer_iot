@@ -18,7 +18,7 @@ block content
             div
                 span.seconds
                 p.smalltext Secondes
-
+        h2#warning
         script.
             initializeClock('clockdiv', "#{deadline}");
             setTimeout(() => {
@@ -26,6 +26,8 @@ block content
                  if(parseInt(minutes) < 2) {
                     $('#clockdiv div > span').css('background','#E84C3E');
                     $('#clockdiv > div').css('background', '#F69988');
+                    document.getElementById('warning').innerHTML = "TEMPS CRITIQUE";
+                    $('#warning').css('color', 'yellow');
                 }
             }, 1000);
         br

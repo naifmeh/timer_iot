@@ -10,7 +10,12 @@ block content
             h1 Timer pour #{etudiant}
         else
             h1 Timer
-        p Createur : #{prof} (A noter que le timer affiché est uniquement a titre indicatif et n'est pas exact)
+        if prof
+            span Createur : #{prof}
+        else
+            span Createur anonyme
+        span  (A noter que le timer affiché est uniquement a titre indicatif et n'est pas exact)
+        p
         div#clockdiv
             div
                 span.minutes
@@ -18,6 +23,8 @@ block content
             div
                 span.seconds
                 p.smalltext Secondes
+        
+        h2#warning
 
         script.  
             initializeClock('clockdiv', "#{deadline}");
@@ -26,12 +33,13 @@ block content
                  if(parseInt(minutes) < 2) {
                     $('#clockdiv div > span').css('background','#E84C3E');
                     $('#clockdiv > div').css('background', '#F69988');
+                    document.getElementById('warning').innerHTML = "TEMPS CRITIQUE";
+                    $('#warning').css('color', 'yellow');
                 }
             }, 1000);
            
-            
-        br
-        br
+        p
+        
         
     h2 Commentaires
     center

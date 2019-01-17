@@ -30,6 +30,10 @@ module.exports.handle_comment = function handle_comment(comment) {
     //return [{"author":"naif","text":"Good"}];
     try {
         let comments = io_utils.read_JSON_file(__dirname+"/comments.json");
+        console.log(comments);
+        if(comments === undefined) {
+            comments = {"comments":[]};
+        }
         comments.comments.unshift(comment);
         
         io_utils.write_JSON_toFile(comments, __dirname+'/comments.json');
@@ -47,7 +51,7 @@ module.exports.read_comments = () => {
         
         return comments.comments;
     } catch(err) {
-        console.err(err);
+        console.log(err);
         return [];
     }
 }
